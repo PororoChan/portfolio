@@ -41,6 +41,14 @@ body {
   background-color: rgba(94, 23, 235, 0.65);
   color: #fff;
 }
+a,
+span,
+p {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 section {
   position: relative;
   width: 100%;
