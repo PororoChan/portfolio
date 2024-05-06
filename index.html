@@ -23,14 +23,14 @@
           <div class="rs-nvitem" data-link="aboutme">
             <span>About Me</span>
           </div>
-          <div class="rs-nvitem" data-link="">
-            <span class="rs-purple" style="font-size: 18px">♦</span>
+          <div class="rs-nvitem" data-link="home">
+            <i class="bx bxs-circle rs-purple" style="font-size: 14px"></i>
           </div>
           <div class="rs-nvitem" data-link="experiences">
             <span>Experiences</span>
           </div>
-          <div class="rs-nvitem" data-link="contacts">
-            <span>Contacts</span>
+          <div class="rs-nvitem" data-link="mywork">
+            <span>My Work</span>
           </div>
         </div>
         <div class="rs-socmine">
@@ -41,7 +41,13 @@
             data-microtip-position="left"
             role="tooltip"
           >
-            <i class="bx bxl-instagram"></i>
+            <a
+              href="https://www.instagram.com/ego.deathstar"
+              target="_blank"
+              style="text-decoration: none"
+            >
+              <i class="bx bxl-instagram"></i>
+            </a>
           </div>
           <div
             class="rs-socmine-item"
@@ -50,7 +56,13 @@
             data-microtip-position="left"
             role="tooltip"
           >
-            <i class="bx bxl-linkedin"></i>
+            <a
+              href="https://linkedin.com/in/reksho-satriyo08"
+              target="_blank"
+              style="text-decoration: none"
+            >
+              <i class="bx bxl-linkedin"></i>
+            </a>
           </div>
           <div
             class="rs-socmine-item"
@@ -59,7 +71,13 @@
             data-microtip-position="left"
             role="tooltip"
           >
-            <i class="bx bxl-whatsapp"></i>
+            <a
+              href="https://wa.me/+6285707967235"
+              target="_blank"
+              style="text-decoration: none"
+            >
+              <i class="bx bxl-whatsapp"></i>
+            </a>
           </div>
           <div
             class="rs-socmine-item"
@@ -68,7 +86,13 @@
             data-microtip-position="left"
             role="tooltip"
           >
-            <i class="bx bxl-github"></i>
+            <a
+              href="https://github.com/PororoChan"
+              target="_blank"
+              style="text-decoration: none"
+            >
+              <i class="bx bxl-github"></i>
+            </a>
           </div>
         </div>
         <div class="rs-hero">
@@ -124,14 +148,6 @@
                   alt="photo1"
                   data-aos="fade-in"
                   data-aos-duration="500"
-                  style="
-                    width: 450px;
-                    height: 100%;
-                    object-fit: contain;
-                    margin: 0px;
-                    padding: 0px;
-                    filter: grayscale(1);
-                  "
                 />
                 <span
                   data-aos="fade-left"
@@ -373,7 +389,10 @@
               <div class="timeline__event__date">May 2023 - Present</div>
               <div class="timeline__event__content">
                 <div class="timeline__event__title">
-                  Full-Stack Web Developer
+                  Full-Stack Web Developer <br />
+                  <span style="font-size: 14px"
+                    >Hyperdata Solusindo Mandiri</span
+                  >
                 </div>
                 <div class="timeline__event__description">
                   <p style="text-align: justify; line-height: 1.5; margin: 0px">
@@ -398,7 +417,10 @@
               <div class="timeline__event__date">Jan 2022 - Dec 2022</div>
               <div class="timeline__event__content">
                 <div class="timeline__event__title">
-                  Internship Web Developer
+                  Internship Web Developer <br />
+                  <span style="font-size: 14px"
+                    >Hyperdata Solusindo Mandiri</span
+                  >
                 </div>
                 <div class="timeline__event__description">
                   <p style="text-align: justify; line-height: 1.5; margin: 0px">
@@ -456,6 +478,22 @@
               </div>
             </div> -->
           </div>
+        </div>
+      </section>
+      <section id="mywork">
+        <div class="rs-title-section">
+          <hr class="hrclass" data-aos="fade-right" data-aos-duration="1000" />
+          <span
+            class="section-title"
+            data-aos="zoom-in"
+            data-aos-duration="1500"
+            ><span class="rs-purple">M</span>y Work</span
+          >
+        </div>
+        <div class="margin-x" style="padding-block: 2rem">
+          <span class="rs-purple" style="font-size: 24px; font-weight: bold"
+            >COMING SOON</span
+          >
         </div>
       </section>
       <section id="contacts">
@@ -612,6 +650,19 @@
         "One or both of the elements (contact-div or rs-socmie) not found."
       );
     }
+
+    $(".rs-nvitem").each(function () {
+      $(this).click(function () {
+        var link = $(this).data("link"),
+          offsetTop = $(`#${link}`).offset().top - 100;
+        $([document.documentElement, document.body]).animate(
+          {
+            scrollTop: offsetTop,
+          },
+          1000
+        );
+      });
+    });
 
     $(".rs-tagname.head").hover(
       function () {
