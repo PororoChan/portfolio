@@ -105,29 +105,35 @@ section {
   padding: 12px;
   transition: all 0.3s ease-in-out;
 }
-.rs-wrapper section .rs-socmine .rs-socmine-item {
+.rs-wrapper section .rs-socmine .rs-socmine-item,
+.rs-wrapper section .rs-socmine .rs-socmine-item a {
   width: 24px;
   height: 24px;
   font-size: 24px;
   transition: 0.5s;
   color: var(--greyline);
 }
-.rs-wrapper section .rs-socmine .rs-socmine-item:hover {
+.rs-wrapper section .rs-socmine .rs-socmine-item:hover,
+.rs-wrapper section .rs-socmine .rs-socmine-item:hover a {
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.rs-wrapper section .rs-socmine .rs-socmine-item[aria-icon="instagram"]:hover {
+.rs-wrapper
+  section
+  .rs-socmine
+  .rs-socmine-item[aria-icon="instagram"]:hover
+  a {
   color: rgba(243, 37, 93);
 }
-.rs-wrapper section .rs-socmine .rs-socmine-item[aria-icon="linkedin"]:hover {
+.rs-wrapper section .rs-socmine .rs-socmine-item[aria-icon="linkedin"]:hover a {
   color: rgba(0, 119, 181);
 }
-.rs-wrapper section .rs-socmine .rs-socmine-item[aria-icon="whatsapp"]:hover {
+.rs-wrapper section .rs-socmine .rs-socmine-item[aria-icon="whatsapp"]:hover a {
   color: rgba(0, 151, 16);
 }
-.rs-wrapper section .rs-socmine .rs-socmine-item[aria-icon="github"]:hover {
+.rs-wrapper section .rs-socmine .rs-socmine-item[aria-icon="github"]:hover a {
   color: var(--purple);
 }
 .rs-capitalize {
@@ -326,6 +332,18 @@ section {
 }
 
 /* Global */
+.photo1 img {
+  width: 450px;
+  height: 100%;
+  object-fit: contain;
+  margin: 0px;
+  padding: 0px;
+  filter: grayscale(1);
+  transition: all 0.3s ease-in-out;
+}
+.photo1 img:hover {
+  filter: grayscale(0) !important;
+}
 .rs-col-4 {
   width: 33.33332%;
   flex: 0 0 auto;
@@ -408,7 +426,7 @@ section {
 .timeline__event:nth-child(2n + 1) .timeline__event__icon:before {
   content: "";
   width: 2px;
-  height: 75px;
+  height: 100px;
   background: var(--purple);
   position: absolute;
   top: 0%;
@@ -493,7 +511,7 @@ section {
 .timeline__event__icon:after {
   content: "";
   width: 100%;
-  height: 2px;
+  height: 3px;
   background: var(--purple);
   position: absolute;
   left: 0%;
