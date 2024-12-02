@@ -60,7 +60,7 @@
     <div class="rs-wrapper">
       <section
         id="swup"
-        class="page page--1 transition-reveal"
+        class="page page--2 transition-reveal"
         style="height: 100vh"
       >
         <div class="rs-navbar">
@@ -309,28 +309,6 @@
       "text",
       ["rgba(88, 88, 88)", "rgba(88, 88, 88)", "rgba(88, 88, 88)"]
     );
-
-    $("#carousel-skill").owlCarousel({
-      items: 8,
-      loop: true,
-      center: true,
-      autoplay: true,
-      autoplayTimeout: 1000,
-      responsiveClass: true,
-      responsive: {
-        0: {
-          items: 2,
-          center: true,
-        },
-        600: {
-          items: 5,
-          center: true,
-        },
-        1000: {
-          items: 8,
-        },
-      },
-    });
 
     setInterval(createMeteorite, 5000);
     var contactDiv = $("#div-contact");

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Reksho Satriyo (PororoChan)" />
+    <meta name="description" content="Portfolio V1.0.0 (07/10/23)" />
+    <title>Reksoo</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/boxicons.css" />
+    <link rel="stylesheet" href="./css/microtip.css" />
+    <link rel="stylesheet" href="./css/aos.css" />
+    <link rel="stylesheet" href="./css/transition.css" />
+    <link rel="stylesheet" href="./css/owl.carousel.css" />
+    <script type="module" src="./run.js"></script>
+    <link rel="shortcut icon" href="./img/icon.ico" type="image/x-icon" />
+    <style>
+      .meteorite {
+        position: fixed;
+        z-index: 0;
+        width: 10px;
+        height: 10px;
+        background-color: rgba(140, 82, 255, 1);
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(140, 82, 255, 0.8),
+          0 0 30px rgba(140, 82, 255, 0.6);
+        animation: fall 1s linear forwards;
+      }
+
+      .meteorite::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(
+          to left,
+          rgba(140, 82, 255, 0),
+          rgba(140, 82, 255, 0.5)
+        );
+        transform: translate(-0%, -45%) rotate(160deg); /* Adjust rotation and position */
+        transform-origin: left;
+        border-radius: 2px;
+      }
+
+      @keyframes fall {
+        0% {
+          transform: translateY(-100%) translateX(0) rotate(45deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(100vh) translateX(100vw) rotate(45deg);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rs-wrapper">
+      <section
+        id="swup"
+        class="page page--3 transition-reveal"
+        style="height: 100vh"
+      >
+        <div class="rs-navbar">
+          <a
+            href="/card.html"
+            class="rs-nvitem button"
+            data-swup-animation="circle"
+            >My Card</a
+          >
+          <a
+            href="/aboutme.html"
+            class="rs-nvitem button"
+            data-swup-animation="circle"
+            >About Me</a
+          >
+          <a
+            href="/mywork.html"
+            class="rs-nvitem button"
+            data-swup-animation="circle"
+            >My Work</a
+          >
+        </div>
+        <div class="rs-socmine">
+          <div
+            class="rs-socmine-item"
+            aria-icon="instagram"
+            aria-label="@ego.deathstar"
+            data-microtip-position="left"
+            role="tooltip"
+          >
+            <a
+              href="https://www.instagram.com/ego.deathstar"
+              target="_blank"
+              style="text-decoration: none"
+            >
+              <i class="bx bxl-instagram"></i>
+            </a>
+          </div>
+          <div
+            class="rs-socmine-item"
+            aria-icon="linkedin"
+            aria-label="Reksho Satriyo"
+            data-microtip-position="left"
+            role="tooltip"
+          >
+            <a
+              href="https://linkedin.com/in/reksho-satriyo08"
+              target="_blank"
+              style="text-decoration: none"
+            >
+              <i class="bx bxl-linkedin"></i>
+            </a>
+          </div>
+          <div
+            class="rs-socmine-item"
+            aria-icon="whatsapp"
+            aria-label="08xxxxxxxxx"
+            data-microtip-position="left"
+            role="tooltip"
+          >
+            <a
+              href="https://wa.me/+6285707967235"
+              target="_blank"
+              style="text-decoration: none"
+            >
+              <i class="bx bxl-whatsapp"></i>
+            </a>
+          </div>
+          <div
+            class="rs-socmine-item"
+            aria-icon="github"
+            aria-label="PororoChan"
+            data-microtip-position="left"
+            role="tooltip"
+          >
+            <a
+              href="https://github.com/PororoChan"
+              target="_blank"
+              style="text-decoration: none"
+            >
+              <i class="bx bxl-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="rs-title-section">
+          <hr style="opacity: 0" />
+          <span class="section-title" style="opacity: 0"
+            ><span class="rs-purple" style="opacity: 0">&nbsp;</span>
+          </span>
+        </div>
+        <div class="margin-x margin-t-2" style="padding-block: 2rem">
+          <div
+            class="rs-tagname text-uppercase margin-b-0 pointer-none"
+            style="position: relative; z-index: 1"
+          >
+            <span>reksho satriyo</span>
+            <span
+              style="
+                position: absolute;
+                left: -20px;
+                bottom: 5px;
+                width: 275px;
+                height: 35px;
+                z-index: -1;
+                background-color: rgba(140, 82, 255);
+              "
+            ></span>
+          </div>
+          <div class="rs-about-me-desc margin-t-0">
+            <p style="letter-spacing: 2px; line-height: 1.2">
+              <span style="font-weight: 500" class="rs-purple"
+                >I'm Reksho Satriyo</span
+              >, a full-stack web developer and intermediate web designer with
+              over three years of experience in the field. I specialize in
+              crafting creative and functional solutions tailored to meet
+              diverse online needs. My expertise spans front-end and back-end
+              development, enabling me to deliver seamless and dynamic web
+              applications.
+            </p>
+          </div>
+          <div
+            class="owl-carousel"
+            id="carousel-skill"
+            style="margin-top: 4rem"
+          >
+            <div class="rs-bullet-skill">
+              <i
+                class="bx bxl-visual-studio"
+                style="color: rgba(8, 124, 216)"
+              ></i>
+              <span>VS Code</span>
+            </div>
+            <div class="rs-bullet-skill">
+              <i
+                class="bx bxl-postgresql"
+                style="color: rgba(57, 108, 148)"
+              ></i>
+              <span>PostgreSQL</span>
+            </div>
+            <div class="rs-bullet-skill">
+              <i class="bx bxl-php" style="color: rgba(123, 127, 181)"></i>
+              <span>PHP</span>
+            </div>
+            <div class="rs-bullet-skill">
+              <i class="bx bxl-html5" style="color: rgba(231, 83, 43)"></i>
+              <span>HTML5</span>
+            </div>
+            <div class="rs-bullet-skill">
+              <i class="bx bxl-css3" style="color: rgba(48, 106, 241)"></i>
+              <span>CSS3</span>
+            </div>
+            <div class="rs-bullet-skill">
+              <i
+                class="bx bxl-tailwind-css"
+                style="color: rgba(61, 190, 248)"
+              ></i>
+              <span>Tailwind</span>
+            </div>
+            <div class="rs-bullet-skill">
+              <i class="bx bxl-bootstrap" style="color: rgba(141, 26, 255)"></i>
+              <span>Bootstrap</span>
+            </div>
+            <div class="rs-bullet-skill">
+              <i class="bx bxl-sass" style="color: rgba(207, 108, 156)"></i>
+              <span>Sass</span>
+            </div>
+            <div class="rs-bullet-skill">
+              <i
+                class="bx bxl-javascript"
+                style="color: rgba(247, 224, 37)"
+              ></i>
+              <span>Javascript</span>
+            </div>
+            <div class="rs-bullet-skill">
+              <i class="bx bxl-nodejs" style="color: rgba(126, 170, 60)"></i>
+              <span>Node.js</span>
+            </div>
+            <div class="rs-bullet-skill">
+              <i class="bx bxl-jquery" style="color: rgba(25, 107, 172)"></i>
+              <span>jQuery</span>
+            </div>
+            <div class="rs-bullet-skill">
+              <i class="bx bxl-gitlab" style="color: rgba(227, 73, 48)"></i>
+              <span>GitLab</span>
+            </div>
+            <div class="rs-bullet-skill">
+              <i class="bx bxl-git" style="color: rgba(243, 85, 48)"></i>
+              <span>Git.</span>
+            </div>
+            <div class="rs-bullet-skill">
+              <i class="bx bx-bot" style="color: rgba(45, 150, 220)"></i>
+              <span>Gemini</span>
+            </div>
+            <div class="rs-bullet-skill">
+              <i class="bx bx-bot" style="color: rgba(12, 12, 12)"></i>
+              <span>ChatGPT</span>
+            </div>
+            <div class="rs-bullet-skill">
+              <i class="bx bxl-python" style="color: rgba(247, 223, 107)"></i>
+              <span>Python</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+<script src="./js/jquery.js"></script>
+<script src="./js/aos.js"></script>
+<script src="./js/owl.carousel.js"></script>
+<script>
+  function createMeteorite() {
+    const meteorite = document.createElement("div");
+    meteorite.classList.add("meteorite");
+
+    const randomX = Math.random() * window.innerWidth;
+
+    meteorite.style.left = `${randomX}px`;
+    meteorite.style.top = `-${Math.random() * 50}px`;
+
+    document.body.appendChild(meteorite);
+
+    meteorite.addEventListener("animationend", () => {
+      meteorite.remove();
+    });
+  }
+
+  $(document).ready(function () {
+    setInterval(createMeteorite, 5000);
+    var contactDiv = $("#div-contact");
+    var rsSocmie = $(".rs-socmine");
+  });
+</script>
