@@ -13,6 +13,7 @@ body {
   overflow-x: hidden;
   padding: 0;
   margin: 0;
+  position: relative;
 }
 :root {
   --black: rgba(20, 20, 19);
@@ -27,15 +28,7 @@ body {
   --ball4: rgba(234, 234, 243);
 }
 ::-webkit-scrollbar {
-  width: 3px;
-  height: 3px;
-}
-::-webkit-scrollbar-track {
-  background-color: var(--black);
-}
-::-webkit-scrollbar-thumb {
-  background-color: var(--purple);
-  border-radius: 15px;
+  display: none;
 }
 *::selection {
   background-color: rgba(94, 23, 235, 0.65);
@@ -55,7 +48,7 @@ section {
 }
 .rs-wrapper {
   position: relative;
-  background-image: url("../img/bg.png");
+  background-image: url("../img/bg-new.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -79,16 +72,17 @@ section {
 }
 .rs-wrapper section .rs-navbar .rs-nvitem {
   margin-right: 32px;
-  font-size: 16px;
+  font-size: 12px;
+  text-decoration: none;
   text-transform: capitalize;
   color: var(--greyline);
   position: relative;
 }
-.rs-wrapper section .rs-navbar .rs-nvitem:hover {
+.rs-wrapper section .rs-navbar .rs-nvitem:not(.dot):hover {
   cursor: pointer;
   color: var(--white);
 }
-.rs-wrapper section .rs-navbar .rs-nvitem::before {
+.rs-wrapper section .rs-navbar .rs-nvitem:not(.dot)::before {
   content: "";
   position: absolute;
   height: 2px;
@@ -98,7 +92,7 @@ section {
   left: 50%;
   transition: 0.5s;
 }
-.rs-wrapper section .rs-navbar .rs-nvitem:hover::before {
+.rs-wrapper section .rs-navbar .rs-nvitem:not(.dot):hover::before {
   width: 50%;
 }
 .rs-wrapper section .rs-socmine {
@@ -106,28 +100,28 @@ section {
   height: 220px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   position: fixed;
   z-index: 9999;
   top: 12px;
   right: 12px;
-  padding: 12px;
+  gap: 10px;
   transition: all 0.3s ease-in-out;
 }
-.rs-wrapper section .rs-socmine .rs-socmine-item,
+.rs-wrapper section .rs-socmine .rs-socmine-item {
+  width: 25px;
+  height: 25px;
+}
 .rs-wrapper section .rs-socmine .rs-socmine-item a {
-  width: 24px;
-  height: 24px;
-  font-size: 24px;
+  display: block;
+  width: 25px;
+  height: 25px;
+  font-size: 22px;
   transition: 0.5s;
   color: var(--greyline);
 }
-.rs-wrapper section .rs-socmine .rs-socmine-item:hover,
 .rs-wrapper section .rs-socmine .rs-socmine-item:hover a {
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .rs-wrapper
   section
@@ -155,10 +149,29 @@ section {
   color: var(--greyline);
 }
 .rs-hero {
-  margin: 8rem;
-  padding: 18px;
+  height: 80vh;
+  margin: 0 auto;
+  margin-inline: 4rem;
+  top: 12%;
+  padding: 4rem;
   position: relative;
   z-index: 1;
+  background: rgba(140, 82, 255, 0.15);
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--purple);
+  animation: scaleUpDown 2s ease-in-out infinite;
+}
+@keyframes scaleUpDown {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 .rs-hero .rs-tagarrowimg {
   width: 50px;
@@ -168,14 +181,15 @@ section {
   top: 40px;
   transform: rotate(-35deg);
 }
-.rs-tagname {
-  font-size: 120px;
+.rs-tagname:not(.rs-tagh) {
+  font-size: 85px;
   -webkit-text-fill-color: var(--black);
   -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: var(--purple);
   line-height: 1;
   transition: 0.3s;
   width: max-content;
+  margin-bottom: 1rem;
 }
 .rs-hero .rs-tagname:hover {
   cursor: pointer;
@@ -184,21 +198,28 @@ section {
   opacity: 0;
 }
 .rs-hero .rs-tagname.rs-tagh {
+  font-size: 85px;
   -webkit-text-fill-color: var(--black);
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--purple);
+  line-height: 1;
+  transition: 0.3s;
+  width: max-content;
+  margin-bottom: 1rem;
 }
 .rs-hero .rs-rolename {
-  font-size: 38px;
-  color: var(--greyline);
+  font-size: 25px;
+  color: var(--black);
   font-weight: 600;
 }
 .rs-hero .rs-description {
   font-weight: 400;
-  color: var(--greyline);
+  color: var(--white);
+  margin-bottom: 1rem;
 }
 .rs-hero .rs-description p {
-  line-height: 1.18;
-  font-size: 20px;
+  line-height: 1.5;
+  font-size: 16px;
 }
 .rs-hero .rs-description p span {
   transition: 0.3s;
@@ -215,19 +236,22 @@ section {
   width: max-content;
   height: max-content;
 }
-.rs-hero .rs-getcv button {
-  padding-inline: 24px;
-  padding-block: 12px;
+.rs-hero .rs-getcv a {
+  padding-inline: 20px;
+  padding-block: 10px;
   border: none;
-  border-radius: 5px;
   background-color: var(--purple);
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
+  font-weight: 500;
   color: var(--black);
   transition: 0.3s;
   position: relative;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
 }
-.rs-hero .rs-getcv button::before {
+.rs-hero .rs-getcv a::before {
   content: "";
   position: absolute;
   background-color: var(--black);
@@ -236,17 +260,16 @@ section {
   left: 0;
   top: 0;
   transition: 0.3s;
-  border-radius: 5px;
 }
-.rs-hero .rs-getcv button:hover::before {
+.rs-hero .rs-getcv a:hover::before {
   width: 100%;
   color: var(--grey);
   border: 1px solid var(--purple);
 }
-.rs-hero .rs-getcv button:hover {
+.rs-hero .rs-getcv a:hover {
   cursor: pointer;
 }
-.rs-hero .rs-getcv button:hover span {
+.rs-hero .rs-getcv a:hover span {
   position: relative;
   color: var(--purple);
   font-weight: bolder;
@@ -304,8 +327,9 @@ section {
   color: var(--greyline);
 }
 .rs-list-skill {
-  width: 65%;
-  margin-top: 4rem;
+  width: 100%;
+  margin-top: 3rem;
+  padding-bottom: 4rem;
   display: flex;
   flex-direction: row;
   gap: 5px;
@@ -314,21 +338,29 @@ section {
   justify-content: center;
 }
 .rs-bullet-skill {
+  width: 90px;
+  height: 90px;
   padding-block: 6px;
   padding-inline: 10px;
   border: 2px solid var(--purple);
   background-color: transparent;
-  border-radius: 6px;
+  border-radius: 20%;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   transition: all 0.3s ease-in-out;
 }
 .rs-bullet-skill i {
-  margin-right: 12px;
-  font-size: 28px;
+  border: 2px solid var(--purple);
+  background: rgba(140, 82, 255, 0.15);
+  padding: 2px;
+  border-radius: 10px;
+  color: #000;
+  font-size: 22px;
 }
 .rs-bullet-skill span {
-  font-size: 18px;
+  font-size: 12px;
   color: var(--purple);
   font-weight: 600;
 }
@@ -394,8 +426,9 @@ section {
   opacity: 0;
 }
 .console-container {
-  font-size: 38px;
+  font-size: 25px;
   font-weight: 600;
+  margin-bottom: 2rem;
   display: block;
   color: var(--purple);
   margin: auto;
